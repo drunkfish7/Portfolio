@@ -1,0 +1,333 @@
+/* 基础样式 */
+:root {
+    --primary-color: #333;
+    --secondary-color: #666;
+    --accent-color: #4a90e2;
+    --background-color: #fff;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --medium-gray: #e0e0e0;
+    --dark-gray: #888;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --border-radius: 4px;
+    --transition-speed: 0.3s;
+    --max-width: 1400px;
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed) ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 导航栏样式 */
+header {
+    padding: var(--spacing-xs) var(--spacing-md);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    z-index: 100;
+    box-shadow: none;
+    transition: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    height: 40px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    margin-right: var(--spacing-md);
+    font-weight: 400;
+    position: relative;
+    padding: var(--spacing-xs) 0;
+    letter-spacing: 0;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link.active::after {
+    display: none;
+}
+
+.social-link {
+    margin-left: var(--spacing-md);
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    opacity: 0.7;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.social-link:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+/* 首页作品集样式 */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    padding-top: 65px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    margin-top: 0;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.portfolio-image {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-image:hover {
+    transform: scale(1.02);
+}
+
+/* 作品详情页样式 */
+.work-detail {
+    margin-top: var(--spacing-lg);
+}
+
+.work-header {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.work-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.work-meta {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.work-image-container {
+    margin-bottom: var(--spacing-lg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.work-image {
+    width: 100%;
+    height: auto;
+}
+
+.work-description {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+}
+
+.work-description h2 {
+    margin: var(--spacing-md) 0 var(--spacing-sm);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.work-description p {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--secondary-color);
+}
+
+.work-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin: 0;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.gallery-image:hover {
+    transform: none;
+}
+
+.work-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-md) 0;
+    border-top: 1px solid var(--medium-gray);
+    margin-top: var(--spacing-lg);
+}
+
+.back-link, .next-link {
+    display: flex;
+    align-items: center;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+
+.back-link:hover, .next-link:hover {
+    color: var(--accent-color);
+}
+
+.back-link i {
+    margin-right: var(--spacing-xs);
+}
+
+.next-link i {
+    margin-left: var(--spacing-xs);
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    :root {
+        --spacing-lg: 2.5rem;
+        --spacing-xl: 4rem;
+    }
+    
+    .portfolio-grid {
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    main {
+        padding: var(--spacing-sm);
+        padding-top: 60px;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .work-gallery {
+        gap: var(--spacing-sm);
+    }
+    
+    .work-title {
+        font-size: 2rem;
+    }
+    
+    .nav-link {
+        margin-right: var(--spacing-sm);
+        font-size: 0.85rem;
+    }
+    
+    .social-link {
+        margin-left: var(--spacing-sm);
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        margin-right: var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+    
+    .social-link {
+        margin-left: var(--spacing-sm);
+        font-size: 1.1rem;
+    }
+    
+    .work-title {
+        font-size: 1.5rem;
+    }
+    
+    .work-meta {
+        font-size: 0.9rem;
+    }
+    
+    .work-description h2 {
+        font-size: 1.4rem;
+    }
+    
+    .work-description p {
+        font-size: 1rem;
+    }
+} 
