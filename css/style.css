@@ -143,7 +143,7 @@ main {
 .portfolio-item {
     position: relative;
     overflow: hidden;
-    border-radius: 0;
+    border-radius: 12px;
     box-shadow: none;
 }
 
@@ -152,10 +152,12 @@ main {
     object-fit: cover;
     width: 100%;
     transition: transform 0.3s ease;
+    border-radius: 12px;
 }
 
 .portfolio-image:hover {
     transform: scale(1.02);
+    border-radius: 12px;
 }
 
 /* 作品详情页样式 */
