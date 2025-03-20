@@ -107,15 +107,22 @@ header {
 
 .social-link {
     margin-left: var(--spacing-md);
-    font-size: 1.1rem;
-    color: var(--secondary-color);
-    opacity: 0.7;
-    transition: opacity var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
 }
 
-.social-link:hover {
+.social-icon {
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+    transition: opacity var(--transition-speed) ease;
+    stroke-width: 10;
+    stroke: currentColor;
+}
+
+.social-link:hover .social-icon {
     opacity: 1;
-    color: var(--secondary-color);
+    stroke-width: 12;
 }
 
 /* 首页作品集样式 */
@@ -302,6 +309,11 @@ main {
         margin-left: var(--spacing-sm);
         font-size: 1rem;
     }
+    
+    .social-icon {
+        width: 27px;
+        height: 27px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -329,5 +341,10 @@ main {
     
     .work-description p {
         font-size: 1rem;
+    }
+    
+    .social-icon {
+        width: 30px;
+        height: 30px;
     }
 } 
